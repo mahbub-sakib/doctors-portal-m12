@@ -7,10 +7,13 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
 import Footer from './Pages/Shared/Footer';
 import Appointment from './Pages/Appointment/Appointment';
+import Dashboard from './Dashboard/Dashboard';
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MyAppointments from './Dashboard/MyAppointments';
+import MyReview from './Dashboard/MyReview';
 
 function App() {
   return (
@@ -26,6 +29,15 @@ function App() {
             <Appointment></Appointment>
           </RequireAuth>
         }></Route>
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          <Route index element={<MyAppointments></MyAppointments>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+
+        </Route>
       </Routes>
       <ToastContainer></ToastContainer>
       <Footer></Footer>
