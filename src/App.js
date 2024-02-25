@@ -36,7 +36,6 @@ function App() {
         }>
           <Route index element={<MyAppointments></MyAppointments>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
-
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>
