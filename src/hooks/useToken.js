@@ -8,7 +8,7 @@ const useToken = user => {
         const currentUser = { email: email };
         if (email) {
             console.log('inside useToken ', email);
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://doctors-portal-server-swart-ten.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

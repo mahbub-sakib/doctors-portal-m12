@@ -10,11 +10,11 @@ const AvailableAppointments = ({ date, setDate }) => {
 
     const formattedDate = format(date, 'PP');
 
-    const {data: services, isLoading, refetch} = useQuery(['available', formattedDate], ()=>fetch(`http://localhost:5000/available?date=${formattedDate}`)
-            .then(res => res.json()))
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://doctors-portal-server-swart-ten.vercel.app/available?date=${formattedDate}`)
+        .then(res => res.json()))
 
-    if(isLoading){
-     return <Loading></Loading>   
+    if (isLoading) {
+        return <Loading></Loading>
     }
 
     return (
