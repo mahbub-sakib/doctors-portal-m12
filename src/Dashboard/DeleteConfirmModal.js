@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteConfirmModal = ({ deleteDoctor, refetch, setDeleteDoctor }) => {
     const { name, email } = deleteDoctor;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/doctor/${email}`, {
+        fetch(`https://doctors-portal-server-swart-ten.vercel.app/doctor/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

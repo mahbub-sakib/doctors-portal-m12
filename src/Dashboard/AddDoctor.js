@@ -12,7 +12,7 @@ const AddDoctor = () => {
         reset
     } = useForm();
 
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch('https://doctors-portal-server-swart-ten.vercel.app/service').then(res => res.json()))
 
     const imgStorageKey = '22e52da55768e226042d0897370d355f'
 
@@ -44,7 +44,7 @@ const AddDoctor = () => {
                         specialty: data.specialty,
                         img: img
                     }
-                    fetch('http://localhost:5000/doctor', {
+                    fetch('https://doctors-portal-server-swart-ten.vercel.app/doctor', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
